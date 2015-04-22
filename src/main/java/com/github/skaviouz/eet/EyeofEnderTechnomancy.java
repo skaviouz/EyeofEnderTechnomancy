@@ -18,24 +18,39 @@ package com.github.skaviouz.eet;
 
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.Instance;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
 /**
  *
  * @author skaviouz
  */
-@Mod(modid = EyeofEnderTechnomancy.MODID, name = EyeofEnderTechnomancy.MODNAME, version = EyeofEnderTechnomancy.MODVER) //Tell forge "Oh hey, there's a new mod here to load."
+@Mod(
+		modid = Reference.MOD_ID,
+		name = Reference.MOD_NAME,
+		version = Reference.VERSION
+) //Tell forge "Oh hey, there's a new mod here to load."
 public class EyeofEnderTechnomancy //Start the class Declaration
 {
 
-    //Set the ID of the mod (Should be lower case).
+	@Instance(
+			value = Reference.MOD_ID) //Tell Forge what instance to use.
+	public static EyeofEnderTechnomancy instance;
 
-    public static final String MODID = "eet";
-    //Set the "Name" of the mod.
-    public static final String MODNAME = "EyeofEnderTechnomancy";
-    //Set the version of the mod.
-    public static final String MODVER = "0.0.0";
+	@Mod.EventHandler
+	public void preInit(FMLPreInitializationEvent event) {
 
-    @Instance(value = EyeofEnderTechnomancy.MODID) //Tell Forge what instance to use.
-    public static EyeofEnderTechnomancy instance;
+	}
 
- }
+	@Mod.EventHandler
+	public void Init(FMLInitializationEvent event) {
+
+	}
+
+	@Mod.EventHandler
+	public void PostInit(FMLPostInitializationEvent event) {
+
+	}
+
+}
