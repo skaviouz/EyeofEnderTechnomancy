@@ -28,18 +28,24 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
  */
 public class Items {
 
-	public static Item iron_ingot;
+	public static Item[] items;
 
 	public static void init() {
-		iron_ingot = new Item().setUnlocalizedName("iron_ingot");
+		items = new Item[]{
+			new Item().setUnlocalizedName("synchronized_ender_pearl"), 
+		};
 	}
 
 	public static void register() {
-		GameRegistry.registerItem(iron_ingot, iron_ingot.getUnlocalizedName().substring(5), Reference.MOD_ID);
+		for(int i = 0;i<items.length;i++){
+			GameRegistry.registerItem(items[i], getUNomit(items[i],false));
+		}
 	}
 
 	public static void registerRenders() {
-
+		for(int i = 0;i<items.length;i++){
+			registerRender(items[i]);
+		}
 	}
 
 	public static void registerRender(Item item) {
@@ -50,10 +56,20 @@ public class Items {
 				.register(
 						item,
 						0,
-						new ModelResourceLocation(
-								Reference.MOD_ID + ":" + item.getUnlocalizedName().substring(5),
-								""
-						)
+						new ModelResourceLocation(getUNomit(item,true), "inventory")
 				);
 	}
+	
+	/**
+	 * get UnlocalizedName
+	 * omit (TILE:)
+	 * @param item
+	 * @param b true(Minecraft:Iron_Ingot) else (Iron_Ingot)
+	 * @return 
+	 */
+	public static String getUNomit(Item item, boolean b){
+		String s = item.getUnlocalizedName().substring(5);
+		return (b)?Reference.MOD_ID + ":" + s:s;
+	}
+
 }

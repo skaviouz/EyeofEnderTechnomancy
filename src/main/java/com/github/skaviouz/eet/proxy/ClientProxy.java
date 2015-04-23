@@ -14,18 +14,20 @@
 
  0. You just DO WHAT THE FUCK YOU WANT TO.
  */
-package com.github.skaviouz.eet;
+package com.github.skaviouz.eet.proxy;
+
+import com.github.skaviouz.eet.init.Blocks;
+import com.github.skaviouz.eet.init.Items;
 
 /**
  *
  * @author skaviouz
  */
-public class Reference {
+public class ClientProxy extends CommonProxy {
 
-	public static final String MOD_ID = "eet";
-	public static final String MOD_NAME = "EyeofEnderTechnomancy";
-	public static final String VERSION = "1.8-1.0";
-	public static final String CLIENT_PROXY_CLASS = "com.github.skaviouz.eet.proxy.ClientProxy";
-	public static final String SERVER_PROXY_CLASS = "com.github.skaviouz.eet.proxy.CommonProxy";
-
+	@Override
+	public void registerRenders() {
+		Items.registerRenders();
+		Blocks.registerRenders();
+	}
 }
