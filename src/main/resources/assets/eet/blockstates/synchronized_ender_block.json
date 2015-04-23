@@ -1,0 +1,5 @@
+{
+	"variants": {
+		"normal": {"model": "eet:synchronized_ender_block"}
+	}
+}
