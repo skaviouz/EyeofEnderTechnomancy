@@ -16,7 +16,9 @@
  */
 package com.github.skaviouz.eet.init;
 
+import com.github.skaviouz.eet.EyeofEnderTechnomancy;
 import com.github.skaviouz.eet.Reference;
+import com.github.skaviouz.eet.blocks.items.EETItem;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.item.Item;
@@ -32,18 +34,18 @@ public class Items {
 
 	public static void init() {
 		items = new Item[]{
-			new Item().setUnlocalizedName("synchronized_ender_pearl"), 
+			new EETItem().setUnlocalizedName("synchronized_ender_pearl").setCreativeTab(EyeofEnderTechnomancy.tab_eet),
 		};
 	}
 
 	public static void register() {
-		for(int i = 0;i<items.length;i++){
-			GameRegistry.registerItem(items[i], getUNomit(items[i],false));
+		for (int i = 0; i < items.length; i++) {
+			GameRegistry.registerItem(items[i], getUNomit(items[i], false));
 		}
 	}
 
 	public static void registerRenders() {
-		for(int i = 0;i<items.length;i++){
+		for (int i = 0; i < items.length; i++) {
 			registerRender(items[i]);
 		}
 	}
@@ -56,20 +58,20 @@ public class Items {
 				.register(
 						item,
 						0,
-						new ModelResourceLocation(getUNomit(item,true), "inventory")
+						new ModelResourceLocation(getUNomit(item, true), "inventory")
 				);
 	}
-	
+
 	/**
-	 * get UnlocalizedName
-	 * omit (TILE:)
+	 * get UnlocalizedName omit (TILE:)
+	 *
 	 * @param item
 	 * @param b true(Minecraft:Iron_Ingot) else (Iron_Ingot)
-	 * @return 
+	 * @return
 	 */
-	public static String getUNomit(Item item, boolean b){
+	public static String getUNomit(Item item, boolean b) {
 		String s = item.getUnlocalizedName().substring(5);
-		return (b)?Reference.MOD_ID + ":" + s:s;
+		return (b) ? Reference.MOD_ID + ":" + s : s;
 	}
 
 }

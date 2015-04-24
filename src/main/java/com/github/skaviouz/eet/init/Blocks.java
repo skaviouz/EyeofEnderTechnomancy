@@ -14,12 +14,11 @@
 
  0. You just DO WHAT THE FUCK YOU WANT TO.
  */
-
 package com.github.skaviouz.eet.init;
 
+import com.github.skaviouz.eet.EyeofEnderTechnomancy;
 import com.github.skaviouz.eet.Reference;
 import com.github.skaviouz.eet.blocks.EETBlock;
-import static com.github.skaviouz.eet.init.Items.getUNomit;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.Minecraft;
@@ -32,23 +31,24 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
  * @author skaviouz
  */
 public class Blocks {
+
 	public static Block[] blocks;
 
 	public static void init() {
 		blocks = new Block[]{
-			new EETBlock(Material.cloth).setUnlocalizedName("synchronized_ender_block"), 
-			new EETBlock(Material.cloth).setUnlocalizedName("compressed_synchronized_ender"), 
+			new EETBlock(Material.cloth).setUnlocalizedName("synchronized_ender_block").setCreativeTab(EyeofEnderTechnomancy.tab_eet),
+			new EETBlock(Material.cloth).setUnlocalizedName("compressed_synchronized_ender").setCreativeTab(EyeofEnderTechnomancy.tab_eet),
 		};
 	}
 
 	public static void register() {
-		for(int i = 0;i<blocks.length;i++){
-			GameRegistry.registerBlock(blocks[i], getUNomit(blocks[i],false));
+		for (int i = 0; i < blocks.length; i++) {
+			GameRegistry.registerBlock(blocks[i], getUNomit(blocks[i], false));
 		}
 	}
 
 	public static void registerRenders() {
-		for(int i = 0;i<blocks.length;i++){
+		for (int i = 0; i < blocks.length; i++) {
 			registerRender(blocks[i]);
 		}
 	}
@@ -62,20 +62,20 @@ public class Blocks {
 				.register(
 						item,
 						0,
-						new ModelResourceLocation(getUNomit(block,true), "inventory")
+						new ModelResourceLocation(Items.getUNomit(item, true), "inventory")
 				);
 	}
-	
+
 	/**
-	 * get UnlocalizedName
-	 * omit (TILE:)
+	 * get UnlocalizedName omit (TILE:)
+	 *
 	 * @param block
 	 * @param b true(Minecraft:Iron_Ingot) else (Iron_Ingot)
-	 * @return 
+	 * @return
 	 */
-	public static String getUNomit(Block block, boolean b){
+	public static String getUNomit(Block block, boolean b) {
 		String s = block.getUnlocalizedName().substring(5);
-		return (b)?Reference.MOD_ID + ":" + s:s;
+		return (b) ? Reference.MOD_ID + ":" + s : s;
 	}
 
 }
