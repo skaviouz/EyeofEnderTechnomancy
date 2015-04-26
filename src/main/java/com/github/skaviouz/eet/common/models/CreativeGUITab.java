@@ -14,22 +14,26 @@
 
  0. You just DO WHAT THE FUCK YOU WANT TO.
  */
-package com.github.skaviouz.eet.assets.models.blocks;
+package com.github.skaviouz.eet.common.models;
 
-import com.github.skaviouz.eet.EyeofEnderTechnomancy;
-import com.github.skaviouz.eet.assets.models.EETBlock;
-import net.minecraft.block.material.Material;
+import com.github.skaviouz.eet.init.EETItems;
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.Item;
 
 /**
  *
  * @author skaviouz
  */
-public class SynchronizedEnderBlock extends EETBlock {
+public class CreativeGUITab extends CreativeTabs {
 
-public SynchronizedEnderBlock() {
-	super(Material.cloth);
-	setUnlocalizedName("synchronized_ender_block");
-	setCreativeTab(EyeofEnderTechnomancy.tab_eet);
+public CreativeGUITab(String label) {
+	super(label);
+	this.setBackgroundImageName("eet.png");
+}
+
+@Override
+public Item getTabIconItem() {
+	return EETItems.items[0];
 }
 
 }

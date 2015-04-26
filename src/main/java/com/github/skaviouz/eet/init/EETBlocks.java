@@ -16,10 +16,11 @@
  */
 package com.github.skaviouz.eet.init;
 
+import com.github.skaviouz.eet.common.models.blocks.CompressedSynchronizedEnder;
+import com.github.skaviouz.eet.common.models.blocks.SynchronizedEnderBlock;
 import com.github.skaviouz.eet.EyeofEnderTechnomancy;
 import com.github.skaviouz.eet.Reference;
-import com.github.skaviouz.eet.assets.models.EETBlock;
-import com.github.skaviouz.eet.assets.models.blocks.*;
+import com.github.skaviouz.eet.common.models.EETBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.Minecraft;

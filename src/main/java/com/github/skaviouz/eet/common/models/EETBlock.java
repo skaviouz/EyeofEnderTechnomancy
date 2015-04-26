@@ -14,7 +14,7 @@
 
  0. You just DO WHAT THE FUCK YOU WANT TO.
  */
-package com.github.skaviouz.eet.assets.models;
+package com.github.skaviouz.eet.common.models;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;

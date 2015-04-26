@@ -16,10 +16,10 @@
  */
 package com.github.skaviouz.eet.init;
 
+import com.github.skaviouz.eet.common.models.items.SynchronizedEnderPearl;
 import com.github.skaviouz.eet.EyeofEnderTechnomancy;
 import com.github.skaviouz.eet.Reference;
-import com.github.skaviouz.eet.assets.models.EETItem;
-import com.github.skaviouz.eet.assets.models.items.*;
+import com.github.skaviouz.eet.common.models.EETItem;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.item.Item;

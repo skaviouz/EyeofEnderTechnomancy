@@ -14,9 +14,9 @@
 
  0. You just DO WHAT THE FUCK YOU WANT TO.
  */
-package com.github.skaviouz.eet.assets.models.items;
+package com.github.skaviouz.eet.common.models.items;
 
-import com.github.skaviouz.eet.assets.models.EETItem;
+import com.github.skaviouz.eet.common.models.EETItem;
 import com.github.skaviouz.eet.EyeofEnderTechnomancy;
 import java.util.List;
 import net.minecraft.entity.player.EntityPlayer;

@@ -14,10 +14,10 @@
 
  0. You just DO WHAT THE FUCK YOU WANT TO.
  */
-package com.github.skaviouz.eet.assets.models.blocks;
+package com.github.skaviouz.eet.common.models.blocks;
 
 import com.github.skaviouz.eet.EyeofEnderTechnomancy;
-import com.github.skaviouz.eet.assets.models.EETBlock;
+import com.github.skaviouz.eet.common.models.EETBlock;
 import net.minecraft.block.material.Material;
 
 /**

@@ -16,13 +16,15 @@
  */
 package com.github.skaviouz.eet;
 
-import com.github.skaviouz.eet.assets.models.CreativeGUITab;
+import com.github.skaviouz.eet.common.models.CreativeGUITab;
 import com.github.skaviouz.eet.init.Recipes;
 import com.github.skaviouz.eet.init.EETBlocks;
 import com.github.skaviouz.eet.init.EETConfig;
 import com.github.skaviouz.eet.init.EETItems;
 import com.github.skaviouz.eet.proxy.CommonProxy;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.common.config.Configuration;
+import net.minecraftforge.fml.common.FMLLog;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.Instance;
 import net.minecraftforge.fml.common.SidedProxy;
@@ -30,8 +32,10 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
+import org.apache.logging.log4j.Logger;
 
 /**
+ * The Eye of Ender Technomancy mod.
  *
  * @author skaviouz
  */
@@ -42,6 +46,14 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 		acceptedMinecraftVersions = "1.8"
 ) //Tell forge "Oh hey, there's a new mod here to load."
 public class EyeofEnderTechnomancy {
+
+/**
+ * Oh hey! Can you system.out.println for me? and add some useful extras like
+ * time?
+ */
+public static Logger log = FMLLog.getLogger();
+
+public static Configuration config;
 
 /**
  * Annotation is used by the ML reflection is used to override CommonProxy with
@@ -60,10 +72,16 @@ public static final CreativeGUITab tab_eet = new CreativeGUITab("tabEETechnomanc
 		value = Reference.MOD_ID) //Tell Forge what instance to use.
 public static EyeofEnderTechnomancy instance;
 
+/**
+ * Config handling item/block init and registration
+ *
+ * @param event
+ * @throws Exception Not my fault
+ */
 @Mod.EventHandler
-public void preInit(FMLPreInitializationEvent event) {
+public void preInit(FMLPreInitializationEvent event) throws Exception {
 	//config handling stuff
-	EETConfig.init();
+	EETConfig.init(event.getModConfigurationDirectory());
 	//item/block init and registering
 	EETBlocks.init();
 	EETBlocks.register();

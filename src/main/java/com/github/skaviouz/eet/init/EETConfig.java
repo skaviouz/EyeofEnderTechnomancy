@@ -16,11 +16,14 @@
  */
 package com.github.skaviouz.eet.init;
 
+import com.github.skaviouz.eet.EyeofEnderTechnomancy;
+import com.github.skaviouz.eet.Reference;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
+import net.minecraftforge.common.config.Configuration;
 
 /**
  * Load all the configs
@@ -29,44 +32,29 @@ import java.util.zip.ZipInputStream;
  */
 public class EETConfig {
 
-public static void init() {
-	File bmDirectory = new File("config/BloodMagic/schematics");
-
-	if (!bmDirectory.exists() && bmDirectory.mkdirs()) {
-		try {
-			//loading via classloader on runtime will be
-			//		/
-			//		leading / is stripped, don't care
-			//loading via EETConfig.class.getResourceAsStream on runtime can be
-			//		/build/classes/main/com/github/skaviouz/eet/init (DEV)
-			//		/mods/mod.jar/com/github/skaviouz/eet/init (USER)
-			InputStream in = Thread.currentThread().getContextClassLoader().getResourceAsStream("/assets/alchemicalwizardry/schematics/building/buildings.zip");
-			if (in != null) {
-				ZipInputStream zipStream = new ZipInputStream(in);
-				ZipEntry entry = null;
-
-				int extractCount = 0;
-
-				while ((entry = zipStream.getNextEntry()) != null) {
-					File file = new File(bmDirectory, entry.getName());
-					if (file.exists() && file.length() > 3L) {
-						continue;
-					}
-					FileOutputStream out = new FileOutputStream(file);
-
-					byte[] buffer = new byte[8192];
-					int len;
-					while ((len = zipStream.read(buffer)) != -1) {
-						out.write(buffer, 0, len);
-					}
-					out.close();
-
-					extractCount++;
-				}
-			}
-		} catch (Exception e) {
-		}
+//loading via classloader on runtime will be
+//		/
+//		leading / is stripped, don't care
+//loading via EETConfig.class.getResourceAsStream on runtime can be
+//		/build/classes/main/com/github/skaviouz/eet/init (DEV)
+//		/mods/mod.jar/com/github/skaviouz/eet/init (USER)
+public static void init(File dir) throws Exception {
+	EyeofEnderTechnomancy.config = new Configuration(new File(dir, "EyeofEnderTechnomancy.cfg"));
+	try {
+		EyeofEnderTechnomancy.config.load();
+		syncConfig();
+	} catch (Exception e) {
+		//drop the ball
+		throw e;
+	} finally {
+		EyeofEnderTechnomancy.config.save();
 	}
+}
+
+/**
+ * change all the default settings to the configured values
+ */
+public static void syncConfig() {
 }
 
 }

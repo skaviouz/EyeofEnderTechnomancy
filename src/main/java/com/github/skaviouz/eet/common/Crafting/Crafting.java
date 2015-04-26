@@ -14,7 +14,7 @@
 
  0. You just DO WHAT THE FUCK YOU WANT TO.
  */
-package com.github.skaviouz.eet.assets.Crafting;
+package com.github.skaviouz.eet.common.Crafting;
 
 import com.github.skaviouz.eet.init.EETItems;
 import net.minecraft.item.ItemStack;
