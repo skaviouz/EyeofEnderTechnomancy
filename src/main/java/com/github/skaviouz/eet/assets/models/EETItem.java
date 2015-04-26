@@ -14,26 +14,28 @@
 
  0. You just DO WHAT THE FUCK YOU WANT TO.
  */
-package com.github.skaviouz.eet.blocks;
+package com.github.skaviouz.eet.assets.models;
 
-import com.github.skaviouz.eet.init.Items;
-import net.minecraft.creativetab.CreativeTabs;
+import java.util.List;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.util.BlockPos;
+import net.minecraft.util.EnumChatFormatting;
+import net.minecraft.util.EnumFacing;
+import net.minecraft.world.World;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 /**
  *
  * @author skaviouz
  */
-public class CreativeGUITab extends CreativeTabs {
+public class EETItem extends Item {
 
-	public CreativeGUITab(String label) {
-		super(label);
-		this.setBackgroundImageName("eet.png");
-	}
+public void RecipeHandler() {
 
-	@Override
-	public Item getTabIconItem() {
-		return Items.items[0];
-	}
+}
 
 }

@@ -16,8 +16,8 @@
  */
 package com.github.skaviouz.eet.proxy;
 
-import com.github.skaviouz.eet.init.Blocks;
-import com.github.skaviouz.eet.init.Items;
+import com.github.skaviouz.eet.init.EETBlocks;
+import com.github.skaviouz.eet.init.EETItems;
 
 /**
  *
@@ -25,9 +25,9 @@ import com.github.skaviouz.eet.init.Items;
  */
 public class ClientProxy extends CommonProxy {
 
-	@Override
-	public void registerRenders() {
-		Items.registerRenders();
-		Blocks.registerRenders();
-	}
+@Override
+public void registerRenders() {
+	EETItems.registerRenders();
+	EETBlocks.registerRenders();
+}
 }

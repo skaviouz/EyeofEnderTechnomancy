@@ -14,8 +14,7 @@
 
  0. You just DO WHAT THE FUCK YOU WANT TO.
  */
-
-package com.github.skaviouz.eet.blocks;
+package com.github.skaviouz.eet.assets.models;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -26,8 +25,17 @@ import net.minecraft.block.material.Material;
  */
 public class EETBlock extends Block {
 
-	public EETBlock(Material m){
-		super(m);
-	}
-	
+/**
+ *
+ * @param m material to immitate for breaking speed and sound and sound when you
+ * walk on it
+ */
+public EETBlock(Material m) {
+	super(m);
+}
+
+public EETBlock() {
+	this(Material.cloth);
+}
+
 }

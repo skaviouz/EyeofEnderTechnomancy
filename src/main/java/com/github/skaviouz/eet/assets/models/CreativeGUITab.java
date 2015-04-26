@@ -1,5 +1,5 @@
 /*
- * 
+ *
  DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE 
  Version 2, December 2004 
 
@@ -14,18 +14,26 @@
 
  0. You just DO WHAT THE FUCK YOU WANT TO.
  */
-package com.github.skaviouz.eet;
+package com.github.skaviouz.eet.assets.models;
+
+import com.github.skaviouz.eet.init.EETItems;
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.Item;
 
 /**
  *
  * @author skaviouz
  */
-public class Reference {
+public class CreativeGUITab extends CreativeTabs {
 
-public static final String MOD_ID = "eet";
-public static final String MOD_NAME = "EyeofEnderTechnomancy";
-public static final String VERSION = "1.8-1.0";
-public static final String CLIENT_PROXY_CLASS = "com.github.skaviouz.eet.proxy.ClientProxy";
-public static final String SERVER_PROXY_CLASS = "com.github.skaviouz.eet.proxy.CommonProxy";
+public CreativeGUITab(String label) {
+	super(label);
+	this.setBackgroundImageName("eet.png");
+}
+
+@Override
+public Item getTabIconItem() {
+	return EETItems.items[0];
+}
 
 }
