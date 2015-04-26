@@ -16,8 +16,7 @@
  */
 package com.github.skaviouz.eet.init;
 
-import com.github.skaviouz.eet.common.models.blocks.CompressedSynchronizedEnder;
-import com.github.skaviouz.eet.common.models.blocks.SynchronizedEnderBlock;
+import com.github.skaviouz.eet.common.models.blocks.*;
 import com.github.skaviouz.eet.EyeofEnderTechnomancy;
 import com.github.skaviouz.eet.Reference;
 import com.github.skaviouz.eet.common.models.EETBlock;
@@ -39,7 +38,16 @@ public static Block[] blocks;
 public static void init() {
 	blocks = new Block[]{
 		new SynchronizedEnderBlock(),
-		new CompressedSynchronizedEnder(),};
+		new CompressedSynchronizedEnder(),
+		new X(),
+		new X_blue(),
+		new X_cyan(),
+		new X_green(),
+		new X_green_blue(),
+		new X_pink(),
+		new X_violet(),
+		new X_yellow(),
+	};
 }
 
 public static void register() {

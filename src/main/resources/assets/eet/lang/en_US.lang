@@ -1,6 +1,15 @@
 item.synchronized_ender_pearl.name=Synchronized Ender Pearl
+
 tile.synchronized_ender_block.name=Synchronized Ender Block
 tile.compressed_synchronized_ender.name=Compressed Synchronized Ender
+tile.X.name=X
+tile.X_blue.name=X_blue
+tile.X_cyan.name=X_cyan
+tile.X_green.name=X_green
+tile.X_green_blue.name=X_green_blue
+tile.X_pink.name=X_pink
+tile.X_violet.name=X_violet
+tile.X_yellow.name=X_yellow
 
 itemGroup.tabEETechnomancy=Eye of Ender Technomancy
 
