@@ -19,6 +19,12 @@ package com.github.skaviouz.eet.common.models.blocks;
 import com.github.skaviouz.eet.EyeofEnderTechnomancy;
 import com.github.skaviouz.eet.common.models.EETBlock;
 import net.minecraft.block.material.Material;
+import net.minecraft.block.state.IBlockState;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.BlockPos;
+import net.minecraft.util.EnumFacing;
+import net.minecraft.world.World;
 
 /**
  *
@@ -30,6 +36,17 @@ public X() {
 	super(Material.cloth);
 	setUnlocalizedName("X");
 	setCreativeTab(EyeofEnderTechnomancy.tab_eet);
+}
+
+@Override
+public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumFacing side, float X, float Y, float Z) {
+//	TileEntity tileEntity = worldIn.getBlockTileEntity(X, Y, Z);
+//	if (tileEntity == null || playerIn.isSneaking()) {
+//		return false;
+//	}
+	//code to open gui explained later
+	//playerIn.openGui(Tiny.instance, 0, worldIn, hitX, hitY, hitZ);
+	return true;
 }
 
 }
